@@ -1,0 +1,117 @@
+body {
+  background-color: #2e3037;
+  color: #ebe5ce;
+}
+
+.instructions {
+  /* font-family: monospace; */
+  display: flex;
+  /* position: absolute; */
+  width: 100%;
+  justify-content: center;
+  font-size: 100px;
+  /* left: 36%; */
+  top: 8%;
+  z-index: 10;
+}
+
+.fire-group {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  /* font-size: 24px; */
+  top: 54%;
+}
+
+.light {
+  position: absolute;
+  line-height: 75%;
+  opacity: 75%;
+}
+
+.light-3 {
+  animation: light 2s ease-in-out 0s infinite;
+}
+
+
+@keyframes light {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+
+}
+
+.camp-fire {
+  position: absolute;
+  /* font-size: 24px; */
+  /* opacity: 75%; */
+  /* opacity: 50%; */
+}
+
+.flame-1 {
+  left: 51%;
+  animation-duration: 4s;
+  animation-delay:0s;
+}
+
+.flame-2 {
+  left: 49%;
+  animation-duration: 3s;
+  animation-delay:1s;
+}
+
+.flame-3 {
+  left: 50%;
+  animation-duration: 3s;
+  animation-delay:1.7s;
+}
+
+.flame-4 {
+  left: 51%;
+  animation-duration: 4s;
+  animation-delay:3s;
+}
+
+.flame-5 {
+  left: 50%;
+  animation-duration: 3s;
+  animation-delay:4.3s;
+}
+
+.flame-6 {
+  left: 48%;
+  animation-duration: 3s;
+  animation-delay:5.5s;
+}
+
+.flame {
+  font-size: 24px;
+  position: absolute;
+  opacity: 75%;
+  /* font-size: 24px; */
+  animation-name: flame;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+@keyframes flame {
+  0% {
+    opacity: 0%;
+  }
+  5% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 5%;
+    transform: translateY(-1500%) rotate(40deg) translateX(10px) scale(75%);
+  }
+}
