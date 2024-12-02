@@ -2,16 +2,10 @@
 @font-face { font-family: RECEIPT; src: url('./fonts/Fake\ Receipt.otf'); } 
 
 body {
+  background-color: #365A44;
   color: #fdfaee;
   font-family: RECEIPT;
   margin: 0;
-}
-
-.background {
-  background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #365A44 0%, #66895a 50%, #365A44 100%);
-  animation: background-angle 20s linear infinite;
-  /* animation: background-x 4s linear infinite;   */
-  /* animation: background-y 4s linear infinite;   */
 }
 
 @property --angle {
@@ -29,8 +23,18 @@ body {
 @property --y {
   syntax: "<percentage>";
   inherits: false;
-  initial-value:50%;
+  initial-value:0%;
 }
+
+.background {
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #365A44 0%, #66895a 50%, #365A44 100%);
+  animation: background-angle 20s linear infinite;
+  /* animation: background-x 4s linear infinite;   */
+  /* animation: background-y 4s linear infinite;   */
+}
+
 @keyframes background-angle {
   0% { --angle: 180deg }
   /* 50% { --angle: 360deg } */
@@ -64,7 +68,7 @@ body {
 }
 
 .games {
-  margin: 20px 0;
+  margin: 0 10px;
   display: grid;
   grid-template-columns: auto auto;
   gap: 2vh 0;
@@ -117,7 +121,7 @@ body {
 
 .closing-text {
   text-align: center;
-  margin-top: 5vh;;
+  margin-top: 6vh;;
   font-size: 12px;
 }
 .fire-group {
