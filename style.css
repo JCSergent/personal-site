@@ -2,9 +2,47 @@
 @font-face { font-family: RECEIPT; src: url('./fonts/Fake\ Receipt.otf'); } 
 
 body {
-  background-color: #365a44;
+  background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #365A44 25%, #a7b76c 50%, #365A44 75%);
+  border-radius: 50%;
   color: #fdfaee;
   font-family: RECEIPT;
+  animation: background-angle 60s linear infinite; 
+  /* animation: background-x 4s linear infinite;   */
+  /* animation: background-y 4s linear infinite;   */
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: -5%;
+}
+
+@property --y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value:50%;
+}
+@keyframes background-angle {
+  0% { --angle: 180deg }
+  /* 50% { --angle: 360deg } */
+  100% { --angle: 540deg }
+}
+
+@keyframes background-x {
+  0% { --x: 0% }
+  50% { --x: 100% }
+  100% { --x: 0% }
+}
+@keyframes background-y {
+  0% { --y: 0% }
+  50% { --y: 100% }
+  100% { --y: 0% }
 }
 
 .content {
@@ -35,7 +73,10 @@ body {
 }
 
 .game-text {
+  background-color: black;
+  padding: 10px;
   display: flex;
+  border-radius: 20px;
   flex-direction: column;
 }
 
@@ -44,7 +85,7 @@ body {
 }
 
 .game-bio {
-  font-size: 12px;
+  font-size: 10px;
   margin-top: 6px;
 }
 
@@ -68,12 +109,13 @@ body {
   /* font-size: 12px; */
   justify-content: center;
   /* font-size: 24px; */
+  font-size: 8px;
   top: 0%;
 }
 
 .light {
   position: absolute;
-  line-height: 75%;
+  line-height: 100%;
   /* opacity: 75%; */
   animation: light 2s ease-in-out 0s infinite;
 }
