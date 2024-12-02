@@ -3,9 +3,6 @@
 
 body {
   background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #365A44 25%, #66895a 50%, #365A44 75%);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   border-radius: 50%;
   color: #fdfaee;
   font-family: RECEIPT;
@@ -17,7 +14,7 @@ body {
 @property --angle {
   syntax: "<angle>";
   inherits: false;
-  initial-value: 0deg;
+  initial-value: 180deg;
 }
 
 @property --x {
@@ -38,9 +35,9 @@ body {
 }
 
 @keyframes background-x {
-  0% { --x: 0% }
-  50% { --x: 100% }
-  100% { --x: 0% }
+  0% { --x: -5% }
+  50% { --x: 105% }
+  100% { --x: -5% }
 }
 @keyframes background-y {
   0% { --y: 0% }
@@ -64,7 +61,6 @@ body {
 }
 
 .games {
-  margin-top: 5vh;
   display: grid;
   grid-template-columns: auto auto;
   gap: 2vh 0;
@@ -72,14 +68,19 @@ body {
 
 .game-assets {
   background-color: rgb(17, 17, 17);
+  /* background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #804036 25%, #2a5486 50%, #804036 75%); */
   padding: 10px;
   border-radius: 20px 0 0 20px;
   display: flex;
   justify-content: center;
 }
 
-.game-text {
+.game-text { 
   background-color: rgb(17, 17, 17);
+  --x: -5%;
+  --y: 200%;
+  animation: background-angle 10s linear infinite, background-x 10s linear infinite; 
+  background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #804036 0%, #2a5486 50%, #804036 100%);
   padding: 12px;
   display: flex;
   border-radius: 0 20px 20px 0;
@@ -93,6 +94,13 @@ body {
 .game-bio {
   font-size: 10px;
   margin-top: 6px;
+}
+
+.test {
+  padding: 5px 0;
+  /* background-color: rgb(17, 17, 17); */
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
 
 .bio {
