@@ -14,24 +14,18 @@ body {
 
 .instructions {
   font-family: RECEIPT;
-  /* color: #fdfdfd; */
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* position: absolute; */
-  /* width: 100%; */
   justify-content: center;
   font-size: 80px;
-  /* left: 36%; */
   top: 8%;
-  z-index: 10;
 }
 
 .games {
   margin-top: 5vh;
-  width: 100%;
   display: grid;
-  grid-template-columns: 33.5% 66.5%;
+  grid-template-columns: auto auto;
   gap: 5vh 1vw;
 }
 
@@ -80,7 +74,7 @@ body {
 .light {
   position: absolute;
   line-height: 75%;
-  opacity: 75%;
+  /* opacity: 75%; */
   animation: light 2s ease-in-out 0s infinite;
 }
 
