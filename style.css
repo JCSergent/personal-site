@@ -2,11 +2,14 @@
 @font-face { font-family: RECEIPT; src: url('./fonts/Fake\ Receipt.otf'); } 
 
 body {
-  background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #365A44 25%, #66895a 50%, #365A44 75%);
-  border-radius: 50%;
   color: #fdfaee;
   font-family: RECEIPT;
-  animation: background-angle 60s linear infinite; 
+  margin: 0;
+}
+
+.background {
+  background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #365A44 0%, #66895a 50%, #365A44 100%);
+  animation: background-angle 20s linear infinite;
   /* animation: background-x 4s linear infinite;   */
   /* animation: background-y 4s linear infinite;   */
 }
