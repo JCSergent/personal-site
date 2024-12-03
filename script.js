@@ -2,8 +2,6 @@
 var scale = 100
 
 function matchClick(event) {
-    // console.log(event)
-    // console.log(event.srcElement)
     const pos = event.target.id;
 
     const left = (parseInt(pos[0]) - 1).toString() + pos[1]
@@ -11,10 +9,7 @@ function matchClick(event) {
     const up = pos[0] + (parseInt(pos[1]).toString() - 1)
     const down = pos[0] + (parseInt(pos[1]) + 1).toString()
 
-    console.log([left, right, up, down])
-
-
-    for (const match of [left, right, up, down]) {
+    for (const match of [pos, left, right, up, down]) {
         if (document.getElementById(match)) {
             console.log(document.getElementById(match).innerHTML)
             if (document.getElementById(match).innerHTML === 'O') {
@@ -29,3 +24,16 @@ function matchClick(event) {
 for (const elem of document.getElementsByClassName("match-icon")) {
     elem.addEventListener("click", matchClick);
 }
+
+
+function resetMatch() {
+    for (const elem of document.getElementsByClassName("match-icon")) {
+        if (Math.floor(Math.random() * 3)  === 0) {
+            elem.innerHTML = 'X'
+        } else {
+            elem.innerHTML = 'O'
+        }
+    }
+}
+
+resetMatch()
