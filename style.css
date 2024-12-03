@@ -2,11 +2,14 @@
 @font-face { font-family: RECEIPT; src: url('./fonts/Fake\ Receipt.otf'); } 
 
 body {
-  background-color: #365A44;
-  color: white;
+  background-color: #fff;
+  color: #282828;
   font-family: RECEIPT;
   margin: 0;
+}
 
+.landing-page {
+  top: 50%;
 }
 
 .animate-text {
@@ -18,7 +21,6 @@ body {
   animation: chromaticMoveBox 4500ms ease infinite,pulse ease 200ms  infinite;
   /* box-shadow: #414535; */ 
   box-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),-3px 0px 2px rgba(52, 251, 12, 1);
-
 }
 
 @keyframes chromaticMove { 
@@ -56,7 +58,9 @@ body {
   /* opacity: 80%; */
   /* height: 100%; */
   width: 100%;
-  /* z-index: -100; */ 
+  /* z-index: -100; */
+
+/* background-image: linear-gradient(to right, #365a44, #587d55, #84a063, #bac271, #f7e382); */
 
   /* --grid-size: 80px;
   --grid-strength: 2px;
@@ -76,7 +80,7 @@ background-image:
   /* filter: grayscale(72%) sepia(57%) brightness(70%) contrast(1000%); */
   /* -webkit-filter: grayscale(72%) sepia(57%) brightness(70%) contrast(1000%);
   -moz-filter: grayscale(72%) sepia(57%) brightness(70%) contrast(1000%); */
-  background-image: conic-gradient(from var(--angle) at -5% var(--y), red 0%, #f7e382 100%), conic-gradient(from var(--angle) at 105% var(--y),  #365A44 0%, #66895a 100%);
+  /* background-image: conic-gradient(from var(--angle) at -5% var(--y), red 0%, #f7e382 100%), conic-gradient(from var(--angle) at 105% var(--y),  #365A44 0%, #66895a 100%); */
   animation: background-angle 20s linear infinite;
   background-blend-mode:darken;
   /* animation: background-x 4s linear infinite;   */
@@ -105,14 +109,43 @@ background-image:
   margin: auto;
 }
 
-.instructions {
+.title {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   font-size: 80px;
-  top: 8%;
+  margin-top: 5vh;
 }
+
+.match-title {
+  margin-top: 100px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.match-bio {
+  text-align: center;
+
+}
+
+.match-game {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  /* gap: 2vh 2vh; */
+}
+
+.match-icon {
+  font-size: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.match-icon:hover {
+  box-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),-3px 0px 2px rgba(52, 251, 12, 1);
+
+}
+
 
 .games {
   margin: 0 10px;
@@ -141,7 +174,7 @@ background-image:
 }
 
 .game-assets {
-  background-color: #00000080;
+  /* background-color: #00000080; */
   /* filter: contrast(30%) hue-rotate(-40deg); */
   /* background-color: #32b0be; */
   /* background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #804036 25%, #2a5486 50%, #804036 75%); */
@@ -153,7 +186,7 @@ background-image:
 }
 
 .game-text { 
-  background-color: #00000080;
+  /* background-color: #00000080; */
   /* background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #5ebe59 0%, #5ebe59 50%, #32b0be 100%); */
   padding: 12px;
   display: flex;
