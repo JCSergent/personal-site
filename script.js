@@ -72,10 +72,10 @@ function glyphClick(event) {
     const glyph = event.target.innerHTML;
     const id = parseInt(event.target.id);
 
-    if (glyph === GLYPHS[0]) { //done
+    if (glyph === GLYPHS[0]) {
         shiftGlyph(id - 2, -1);
         shiftGlyph(id + 2, -1);    
-    } else if(glyph === GLYPHS[1]) { //done
+    } else if(glyph === GLYPHS[1]) {
         shiftGlyph(id - 1, -1);
         shiftGlyph(id - 0, -1);
         shiftGlyph(id + 1, -1);
@@ -84,18 +84,18 @@ function glyphClick(event) {
         shiftGlyph(id - 2, -1);
         shiftGlyph(id + 2, 1);
         shiftGlyph(id + 3, 1);
-    } else if(glyph === GLYPHS[3]) { //done
+    } else if(glyph === GLYPHS[3]) {
         shiftGlyph(id - 3, 1);
         shiftGlyph(id + 3, 1);
-    } else if(glyph === GLYPHS[4]) { //done
+    } else if(glyph === GLYPHS[4]) {
         shiftGlyph(id - 1, 1);
         shiftGlyph(id + 1, 1);
-    } else if(glyph === GLYPHS[5]) { //done
+    } else if(glyph === GLYPHS[5]) {
         shiftGlyph(id - 2, 1); 
         shiftGlyph(id - 1, 2);
         shiftGlyph(id + 1, 2);
         shiftGlyph(id + 2, 2);
-    } else if(glyph === GLYPHS[6]) { //done
+    } else if(glyph === GLYPHS[6]) {
         shiftGlyph(id + 1, 2);
         shiftGlyph(id + 2, 2);
     }
