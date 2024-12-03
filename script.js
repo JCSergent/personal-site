@@ -1,6 +1,32 @@
 
-var scale = 100
+// GAME CHANGER
+let currentGame = 0;
 
+function changeGame(pos) {
+    currentGame += pos;
+
+    const games = document.getElementsByClassName("game");
+    if (currentGame > games.length - 1) {
+        currentGame = 0;
+    } else if(currentGame < 0) {
+        currentGame = games.length - 1
+    }
+
+    for (let i = 0; i < games.length; i++) {
+        if (currentGame === i) {
+            games[i].style.display = 'block';
+        } else {
+            games[i].style.display = 'none';
+        }
+    }
+
+    document.getElementById('game-id').innerHTML = 'Game ' + (currentGame + 1)
+}
+
+changeGame(0);
+
+
+// MATCH GAME
 function matchClick(event) {
     const pos = event.target.id;
 
@@ -21,11 +47,6 @@ function matchClick(event) {
     }
 }
 
-for (const elem of document.getElementsByClassName("match-icon")) {
-    elem.addEventListener("click", matchClick);
-}
-
-
 function resetMatch() {
     for (const elem of document.getElementsByClassName("match-icon")) {
         if (Math.floor(Math.random() * 3)  === 0) {
@@ -36,4 +57,56 @@ function resetMatch() {
     }
 }
 
-resetMatch()
+resetMatch();
+
+for (const elem of document.getElementsByClassName("match-icon")) {
+    elem.addEventListener("click", matchClick);
+}
+
+// GLYPH GAME
+const GLYPHS = ['*', '÷', 'ø', 'Ý', 'ħ', '‡', 'œ']
+
+function glyphClick(event) {
+    const glyph = event.target.innerHTML;
+    const id = parseInt(event.target.id);
+
+    if (glyph === GLYPHS[0]) {
+
+    } else if(glyph === GLYPHS[4]) {
+        shiftGlyph(id - 1, -1);
+        shiftGlyph(id + 1, -1);
+    }
+}
+
+function shiftGlyph(pos, shift) {
+    pos = clampGlyph(pos);
+    
+    const glyphElement = document.getElementById(pos.toString());
+    const glyph = glyphElement.innerHTML;
+    const newGlyph = GLYPHS.findIndex((g) => g === glyph);
+    const i = clampGlyph(newGlyph + shift);
+    glyphElement.innerHTML = GLYPHS[i];
+}
+
+function clampGlyph(i) {
+    if (i < 0) {
+        i += GLYPHS.length;
+    } else if (i > GLYPHS.length - 1) {
+        i -= GLYPHS.length;
+    }
+
+    return i;
+}
+
+function resetGylph() {
+    const glyphElements = document.getElementsByClassName("glyph-icon");
+    for (let i=0; i<glyphElements.length;i++) {
+        glyphElements[i].innerHTML = GLYPHS[i];
+    }
+}
+
+resetGylph();
+
+for (const elem of document.getElementsByClassName("glyph-icon")) {
+    elem.addEventListener("click", glyphClick);
+}

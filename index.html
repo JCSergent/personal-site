@@ -13,41 +13,54 @@
             <div class="landing-title">About Me!</div>
             <div class="about-me">Software Engineer by day, game developer by night.</div>
           </div>
-  
           <div>
             <div class="landing-title">Lets play a game!</div>
-            <div class="match-actions">
-              <button tooltip="Previous Game">&larr;</button>
-              Game 1
-              <button tooltip="Next Game">&rarr;</button>
+            <div class="game-actions">
+              <button tooltip="Previous Game" onclick="changeGame(-1)">&larr;</button>
+              <span id="game-id">Game 1</span>
+              <button tooltip="Next Game" onclick="changeGame(1)">&rarr;</button>
             </div>
-            <div class="match-actions">
-              <button tooltip="Reset" onclick="resetMatch()">&olarr;</button></div>
-            <div class="match-bio">CLICK THE ICONS AND TRY TO GET ALL OF ONE TYPE.</div>
-            <div class="match-actions"></div>
-            <div class="match-game">
-              <div class="match-icon" id="00">O</div>
-              <div class="match-icon" id="01">X</div>
-              <div class="match-icon" id="02">O</div>
-              <div class="match-icon" id="03">O</div>
-              <div class="match-icon" id="04">O</div>
-              <div class="match-icon" id="10">x</div>
-              <div class="match-icon" id="11">O</div>
-              <div class="match-icon" id="12">O</div>
-              <div class="match-icon" id="13">O</div>
-              <div class="match-icon" id="14">X</div>
-              <div class="match-icon" id="20">O</div>
-              <div class="match-icon" id="21">O</div>
-              <div class="match-icon" id="22">O</div>
-              <div class="match-icon" id="23">O</div>
-              <div class="match-icon" id="24">O</div>
-              <div class="match-icon" id="30">O</div>
-              <div class="match-icon" id="31">O</div>
-              <div class="match-icon" id="32">O</div>
-              <div class="match-icon" id="33">O</div>
-              <div class="match-icon" id="34">O</div>
+            <div id="match-game" class="game">
+              <div class="game-actions">
+                <button tooltip="Reset" onclick="resetMatch()">&olarr;</button></div>
+              <div class="game-bio">CLICK THE ICONS AND TRY TO GET ALL OF ONE TYPE.</div>
+              <div class="match-game">
+                <div class="match-icon styled-hover" id="00">O</div>
+                <div class="match-icon styled-hover" id="01">X</div>
+                <div class="match-icon styled-hover" id="02">O</div>
+                <div class="match-icon styled-hover" id="03">O</div>
+                <div class="match-icon styled-hover" id="04">O</div>
+                <div class="match-icon styled-hover" id="10">x</div>
+                <div class="match-icon styled-hover" id="11">O</div>
+                <div class="match-icon styled-hover" id="12">O</div>
+                <div class="match-icon styled-hover" id="13">O</div>
+                <div class="match-icon styled-hover" id="14">X</div>
+                <div class="match-icon styled-hover" id="20">O</div>
+                <div class="match-icon styled-hover" id="21">O</div>
+                <div class="match-icon styled-hover" id="22">O</div>
+                <div class="match-icon styled-hover" id="23">O</div>
+                <div class="match-icon styled-hover" id="24">O</div>
+                <div class="match-icon styled-hover" id="30">O</div>
+                <div class="match-icon styled-hover" id="31">O</div>
+                <div class="match-icon styled-hover" id="32">O</div>
+                <div class="match-icon styled-hover" id="33">O</div>
+                <div class="match-icon styled-hover" id="34">O</div>
+              </div>
             </div>
-            
+            <div id="glyph-game" class="game">
+              <div class="game-actions">
+                <button tooltip="Reset" onclick="resetGylph()">&olarr;</button></div>
+              <div class="game-bio">CLICK THE ICONS AND TRY TO GET ALL OF ONE TYPE.</div>
+              <div class="glyph-game">
+                <div class="glyph-icon styled-hover" id="0">*</div>
+                <div class="glyph-icon styled-hover" id="1">÷</div>
+                <div class="glyph-icon styled-hover" id="2">ø</div>
+                <div class="glyph-icon styled-hover" id="3">Ý</div>
+                <div class="glyph-icon styled-hover" id="4">ħ</div>
+                <div class="glyph-icon styled-hover" id="5">‡</div>
+                <div class="glyph-icon styled-hover" id="6">‡</div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="landing-footer">&darr; Check out Some Projects! &darr;</div>
@@ -59,8 +72,8 @@
         </div>
         <div class="game-text">
           <div class="game-title">Periscope</div>
-          <div class="game-bio">Navigate the depths of the sea as you search its secrets in this survival horror game.</div>
-          <div class="game-bio">Made in 7 days for scream jam 2024.</div>
+          <div class="game-desc">Navigate the depths of the sea as you search its secrets in this survival horror game.</div>
+          <div class="game-desc">Made in 7 days for scream jam 2024.</div>
           <a class="button-3" href="https://inbredrobot.itch.io/periscope">Play ME!</a>
         </div>
         <!-- <div class="game">
@@ -79,8 +92,8 @@
           </div>
           <div class="game-text" style="animation-delay: 1s">
             <div class="game-title">Untitled Gnome Fling Game</div>
-            <div class="game-bio">Rid you ship from the hoarde of gnomes climbing aboard.</div>
-            <div class="game-bio">Made in 4 Days for the GMTK2024 Game Jam.</div>
+            <div class="game-desc">Rid you ship from the hoarde of gnomes climbing aboard.</div>
+            <div class="game-desc">Made in 4 Days for the GMTK2024 Game Jam.</div>
             <a class="button-3" href="https://inbredrobot.itch.io/untitled-gnome-fling-game">PLAY ME!</a>
           </div>
         <!-- <div class="game">
@@ -111,8 +124,8 @@
         </div>
         <div class="game-text" style="animation-delay: 2s">
           <div class="game-title">Internet Killed the Video Star</div>
-          <div class="game-bio">Boss Battle against the almighty DVD Player.</div>
-          <div class="game-bio">Made in the awesome PICO-8.</div>
+          <div class="game-desc">Boss Battle against the almighty DVD Player.</div>
+          <div class="game-desc">Made in the awesome PICO-8.</div>
           <a class="button-3" href="https://inbredrobot.itch.io/internet-kills-the-video-star">PLAY ME!</a>
         </div>
     </div>

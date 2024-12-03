@@ -8,9 +8,9 @@ body {
   margin: 0;
 }
 
-.landing-page {
+/* .landing-page {
   top: 50%;
-}
+} */
 
 .animate-text {
   text-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),-3px 0px 2px rgba(52, 251, 12, 1);
@@ -109,9 +109,6 @@ background-image:
   margin: auto;
 }
 
-.landing-page {
-  height: 100%;
-}
 .title {
   text-align: center;
   font-size: 80px;
@@ -121,7 +118,8 @@ background-image:
 .landing-content {
   margin-top: 8vh;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
+  height: 60vh;
 }
 
 .landing-title {
@@ -131,8 +129,8 @@ background-image:
 }
 
 .landing-footer {
-  margin-top: 14vh;
-  margin-bottom: 2vh;
+  margin-top: 8vh;
+  margin-bottom: 4vh;
   text-align: center;
 }
 
@@ -140,11 +138,11 @@ background-image:
   font-size: 14px;
 }
 
-.match-bio {
+.game-bio {
   text-align: center;
 }
 
-.match-actions {
+.game-actions {
   margin: 8px 0;
   text-align: center;
   button {
@@ -156,6 +154,18 @@ background-image:
   button:hover {
     cursor: pointer;
   }
+}
+
+.glyph-game {
+  margin-top: 10vh;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.glyph-icon {
+  font-size: 100px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .match-game {
@@ -170,9 +180,8 @@ background-image:
   cursor: pointer;
 }
 
-.match-icon:hover {
+.styled-hover:hover {
   box-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),-3px 0px 2px rgba(52, 251, 12, 1);
-
 }
 
 
@@ -181,25 +190,6 @@ background-image:
   display: grid;
   grid-template-columns: auto auto;
   gap: 2vh 0;
-}
-
-.game {
-  display: grid;
-  grid-template-columns: auto auto;
-  background-color: #00000050;
-  border-radius: 20px;
-  padding: 10px;
-  --x: -5%;
-  --y: 200%;
-  /* animation: background-angle 6s linear infinite; */
-}
-
-
-.game:hover {
-  animation: chromaticMoveBox 4500ms ease infinite,pulse ease 200ms  infinite;
-  /* box-shadow: #414535; */ 
-  box-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),-3px 0px 2px rgba(52, 251, 12, 1);
-
 }
 
 .game-assets {
@@ -227,7 +217,7 @@ background-image:
   font-size: 28px;
 }
 
-.game-bio {
+.game-desc {
   font-size: 12px;
   margin-top: 10px;
 }
