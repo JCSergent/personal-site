@@ -10,26 +10,27 @@ body {
 }
 
 .animate-text {
-  text-shadow: 3px 2px 2px rgba(251, 12, 12,1), 0px -1px 3px rgba(12, 79, 251,.5),-3px 0px 2px rgba(52, 251, 12, 1);
+  text-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),-3px 0px 2px rgba(52, 251, 12, 1);
   animation: chromaticMove 4500ms ease infinite,pulse ease 200ms  infinite;
 }
 
 .animate-shadow-box {
-  /* animation: chromaticMoveBox 4500ms ease infinite,pulse ease 200ms  infinite; */
-  box-shadow: #414535;
-  /* box-shadow: 3px 2px 2px black; */
+  animation: chromaticMoveBox 4500ms ease infinite,pulse ease 200ms  infinite;
+  /* box-shadow: #414535; */ 
+  box-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),-3px 0px 2px rgba(52, 251, 12, 1);
+
 }
 
 @keyframes chromaticMove { 
-  0%{text-shadow: 3px 2px 2px rgba(251, 12, 12,1), 0px -1px 3px rgba(12, 79, 251,.5),0px 0px -2px rgba(52, 251, 12, 1);}
-  50%{text-shadow: 3px 2px 2px rgba(251, 12, 12,1), 0px -1px 3px rgba(12, 79, 251,.5),-3px 2px 3px rgba(52, 251, 12, 1);}
-  100%{text-shadow: 3px 2px 2px rgba(251, 12, 12,1), 0px -1px 3px rgba(12, 79, 251,.5),2px -1px 2px rgba(52, 251, 12, 1);}
+  0%{text-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),0px 0px -2px rgba(52, 251, 12, 1);}
+  50%{text-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),-3px 2px 3px rgba(52, 251, 12, 1);}
+  100%{text-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),2px -1px 2px rgba(52, 251, 12, 1);}
 }
 
 @keyframes chromaticMoveBox { 
-  0%{box-shadow: 2px 2px 2px rgba(251, 12, 12,1), 0px -1px 3px rgba(12, 79, 251,.5),0px 0px -2px rgba(52, 251, 12, 1);}
-  50%{box-shadow: 3px 2px 2px rgba(251, 12, 12,1), 0px -1px 3px rgba(12, 79, 251,.5),-3px 2px 3px rgba(52, 251, 12, 1);}
-  100%{box-shadow: 3px 2px 2px rgba(251, 12, 12,1), 0px -1px 3px rgba(12, 79, 251,.5),2px -1px 2px rgba(52, 251, 12, 1);}
+  0%{box-shadow: 2px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),0px 0px -2px rgba(52, 251, 12, 1);}
+  50%{box-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),-3px 2px 3px rgba(52, 251, 12, 1);}
+  100%{box-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),2px -1px 2px rgba(52, 251, 12, 1);}
 }
 
 @property --angle {
@@ -75,7 +76,7 @@ background-image:
   /* filter: grayscale(72%) sepia(57%) brightness(70%) contrast(1000%); */
   /* -webkit-filter: grayscale(72%) sepia(57%) brightness(70%) contrast(1000%);
   -moz-filter: grayscale(72%) sepia(57%) brightness(70%) contrast(1000%); */
-  background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #365A44 0%, #365A44 25%, #3a4b40 50%, #365A44 75%, #365A44 100%);
+  background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #365A44 0%, #365A44 25%, #365A44 50%, #66895a 75%, #365A44 100%);
   animation: background-angle 20s linear infinite;
   /* animation: background-x 4s linear infinite;   */
   /* animation: background-y 4s linear infinite;   */
@@ -115,30 +116,46 @@ background-image:
 .games {
   margin: 0 10px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto;
   gap: 2vh 0;
 }
 
+.game {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #00000050;
+  border-radius: 20px;
+  padding: 10px;
+  --x: -5%;
+  --y: 200%;
+  /* animation: background-angle 6s linear infinite; */
+}
+
+
+.game:hover {
+  animation: chromaticMoveBox 4500ms ease infinite,pulse ease 200ms  infinite;
+  /* box-shadow: #414535; */ 
+  box-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),-3px 0px 2px rgba(52, 251, 12, 1);
+
+}
+
 .game-assets {
-  background-color: #000000;
+  /* background-color: #00000050; */
   /* filter: contrast(30%) hue-rotate(-40deg); */
   /* background-color: #32b0be; */
   /* background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #804036 25%, #2a5486 50%, #804036 75%); */
-  padding: 10px;
-  border-radius: 20px 0 0 20px;
+  /* padding: 10px; */
+  /* border-radius: 20px 0 0 20px; */
   display: flex;
   justify-content: center;
 }
 
 .game-text { 
-  background-color: #000000;
-  --x: -5%;
-  --y: 200%;
-  animation: background-angle 6s linear infinite;
+  /* background-color: #00000050; */
   /* background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #5ebe59 0%, #5ebe59 50%, #32b0be 100%); */
-  padding: 12px;
+  /* padding: 12px; */
   display: flex;
-  border-radius: 0 20px 20px 0;
+  /* border-radius: 0 20px 20px 0; */
   flex-direction: column;
 }
 
