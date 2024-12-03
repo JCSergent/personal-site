@@ -12,15 +12,17 @@ function changeGame(pos) {
         currentGame = games.length - 1
     }
 
+    let name = '';
     for (let i = 0; i < games.length; i++) {
         if (currentGame === i) {
             games[i].style.display = 'block';
+            name = games[i].id
         } else {
             games[i].style.display = 'none';
         }
     }
 
-    document.getElementById('game-id').innerHTML = 'Game ' + (currentGame + 1)
+    document.getElementById('game-id').innerHTML = name +' Game'
 }
 
 changeGame(0);
@@ -70,17 +72,38 @@ function glyphClick(event) {
     const glyph = event.target.innerHTML;
     const id = parseInt(event.target.id);
 
-    if (glyph === GLYPHS[0]) {
-
-    } else if(glyph === GLYPHS[4]) {
+    if (glyph === GLYPHS[0]) { //done
+        shiftGlyph(id - 2, -1);
+        shiftGlyph(id + 2, -1);    
+    } else if(glyph === GLYPHS[1]) { //done
         shiftGlyph(id - 1, -1);
+        shiftGlyph(id - 0, -1);
         shiftGlyph(id + 1, -1);
+    } else if(glyph === GLYPHS[2]) {
+        shiftGlyph(id - 3, -1);
+        shiftGlyph(id - 2, -1);
+        shiftGlyph(id + 2, 1);
+        shiftGlyph(id + 3, 1);
+    } else if(glyph === GLYPHS[3]) { //done
+        shiftGlyph(id - 3, 1);
+        shiftGlyph(id + 3, 1);
+    } else if(glyph === GLYPHS[4]) { //done
+        shiftGlyph(id - 1, 1);
+        shiftGlyph(id + 1, 1);
+    } else if(glyph === GLYPHS[5]) { //done
+        shiftGlyph(id - 2, 1); 
+        shiftGlyph(id - 1, 2);
+        shiftGlyph(id + 1, 2);
+        shiftGlyph(id + 2, 2);
+    } else if(glyph === GLYPHS[6]) { //done
+        shiftGlyph(id + 1, 2);
+        shiftGlyph(id + 2, 2);
     }
 }
 
 function shiftGlyph(pos, shift) {
     pos = clampGlyph(pos);
-    
+
     const glyphElement = document.getElementById(pos.toString());
     const glyph = glyphElement.innerHTML;
     const newGlyph = GLYPHS.findIndex((g) => g === glyph);
