@@ -53,10 +53,10 @@ body {
 
 .background {
   position: absolute;
+  opacity: 60%;
   /* height: 100%; */
   width: 100%;
-  /* z-index: -100; */
-  
+  /* z-index: -100; */ 
 
   /* --grid-size: 80px;
   --grid-strength: 2px;
@@ -76,8 +76,9 @@ background-image:
   /* filter: grayscale(72%) sepia(57%) brightness(70%) contrast(1000%); */
   /* -webkit-filter: grayscale(72%) sepia(57%) brightness(70%) contrast(1000%);
   -moz-filter: grayscale(72%) sepia(57%) brightness(70%) contrast(1000%); */
-  background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #365A44 0%, #365A44 25%, #365A44 50%, #66895a 75%, #365A44 100%);
+  background-image: conic-gradient(from var(--angle) at -5% var(--y), red 0%, #f7e382 100%), conic-gradient(from var(--angle) at 105% var(--y),  #365A44 0%, #66895a 100%);
   animation: background-angle 20s linear infinite;
+  background-blend-mode:color-burn;
   /* animation: background-x 4s linear infinite;   */
   /* animation: background-y 4s linear infinite;   */
 }
@@ -116,7 +117,7 @@ background-image:
 .games {
   margin: 0 10px;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: auto auto;
   gap: 2vh 0;
 }
 
@@ -140,22 +141,23 @@ background-image:
 }
 
 .game-assets {
-  /* background-color: #00000050; */
+  background-color: #00000080;
   /* filter: contrast(30%) hue-rotate(-40deg); */
   /* background-color: #32b0be; */
   /* background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #804036 25%, #2a5486 50%, #804036 75%); */
-  /* padding: 10px; */
-  /* border-radius: 20px 0 0 20px; */
+  padding: 10px;
+  border-radius: 20px 0 0 20px;
   display: flex;
   justify-content: center;
+  /* max-width: 20vw; */
 }
 
 .game-text { 
-  /* background-color: #00000050; */
+  background-color: #00000080;
   /* background-image: conic-gradient(from var(--angle) at var(--x) var(--y),  #5ebe59 0%, #5ebe59 50%, #32b0be 100%); */
-  /* padding: 12px; */
+  padding: 12px;
   display: flex;
-  /* border-radius: 0 20px 20px 0; */
+  border-radius: 0 20px 20px 0;
   flex-direction: column;
 }
 
