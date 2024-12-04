@@ -180,8 +180,26 @@ background-image:
   cursor: pointer;
 }
 
+.styled-hover {
+  cursor: pointer;
+}
+
 .styled-hover:hover {
   box-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),-3px 0px 2px rgba(52, 251, 12, 1);
+}
+
+.memory-game {
+  margin-top: 2vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+}
+
+.memory-icon {
+  font-size: 100px;
+  text-align: center;
+  align-content: center;
+  border: black 2px solid;
 }
 
 
