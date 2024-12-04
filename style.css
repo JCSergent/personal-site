@@ -8,10 +8,6 @@ body {
   margin: 0;
 }
 
-/* .landing-page {
-  top: 50%;
-} */
-
 .animate-text {
   text-shadow: 3px 2px 2px #f7e382, 0px -1px 3px rgba(12, 79, 251,.5),-3px 0px 2px rgba(52, 251, 12, 1);
   animation: chromaticMove 4500ms ease infinite,pulse ease 200ms  infinite;
@@ -116,7 +112,7 @@ background-image:
 }
 
 .landing-content {
-  margin-top: 8vh;
+  margin: 6vh 2vw 0 2vw;
   display: grid;
   grid-template-columns: 50% 50%;
   height: 664px;
@@ -129,8 +125,7 @@ background-image:
 }
 
 .landing-footer {
-  margin-top: 6vh;
-  margin-bottom: 4vh;
+  margin: 6vh 0 4vh 0;
   text-align: center;
 }
 

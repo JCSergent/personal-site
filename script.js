@@ -137,7 +137,7 @@ for (const elem of document.getElementsByClassName("glyph-icon")) {
 
 // MEMORY GAME
 
-let isAwaitingInput = false;
+let memoryState = 'IDLE';
 let highScore = 0;
 let score = 0;
 let currIndex = 0;
@@ -146,20 +146,19 @@ const startMemoryButton = '<div class="game-actions" id="start-memory"><button t
 const centerGrid = document.getElementsByClassName("memory-icon").namedItem('11');
 
 async function memoryClick(event) {
-    if (!isAwaitingInput) {
+    if (memoryState !== 'INPUT') {
         return;
     }
-    isAwaitingInput = false;
+    memoryState = 'PROCESSING';
     for (const elem of document.getElementsByClassName("memory-icon")) {
         elem.classList.remove('styled-hover');
     }
-    if (event.target.id === sequence[currIndex]) { //correct
+    if (event.target.id === sequence[currIndex]) { // CORRECT ANSWER
         currIndex += 1;
         event.target.innerHTML = '!';
-        await new Promise(resolve => setTimeout(resolve, 800));
+        await memoryScaledWait(800);
         event.target.innerHTML = '&nbsp;';
-        if (currIndex > sequence.length - 1) {
-            console.log('finish turn')
+        if (currIndex > sequence.length - 1) { // FINISH SEQUENCE
             score += 1;
             document.getElementById('memory-score').innerHTML = score;
             document.getElementsByClassName("memory-icon").namedItem('00').innerHTML = '!';
@@ -178,14 +177,14 @@ async function memoryClick(event) {
             await new Promise(resolve => setTimeout(resolve, 800));
             playMemoryTurn();
 
-        } else {
+        } else { // CONTINUE SEQUENCE
             for (const elem of document.getElementsByClassName("memory-icon")) {
                 elem.classList.add('styled-hover');
             }
-            isAwaitingInput = true;
+            memoryState = 'INPUT';
         }
 
-    } else { //incorrect
+    } else { // INCORRECT ANSWER
         for (const elem of document.getElementsByClassName("memory-icon")) {
             elem.innerHTML = 'X';
         }
@@ -220,33 +219,40 @@ async function memoryClick(event) {
 }
 
 async function playMemoryTurn() {
-    const newPos = Math.floor(Math.random() * 2).toString() + Math.floor(Math.random() * 2).toString()
-    sequence.push(newPos);
+    memoryState = 'PROCESSING';
+    sequence.push(Math.floor(Math.random() * 3).toString() + Math.floor(Math.random() * 3).toString());
 
     centerGrid.innerHTML = '3';
-    await new Promise(resolve => setTimeout(resolve, 800));
+    await memoryScaledWait(800);
     centerGrid.innerHTML = '2';
-    await new Promise(resolve => setTimeout(resolve, 800));
+    await memoryScaledWait(800);
     centerGrid.innerHTML = '1';
-    await new Promise(resolve => setTimeout(resolve, 800));
+    await memoryScaledWait(800);
     centerGrid.innerHTML = '&nbsp;';
-    await new Promise(resolve => setTimeout(resolve, 800));
+    await memoryScaledWait(800);
 
     for (const pos of sequence) {
         const element = document.getElementsByClassName("memory-icon").namedItem(pos);
         element.innerHTML = '!';
-        await new Promise(resolve => setTimeout(resolve, 800));
+        await memoryScaledWait(800);
         element.innerHTML = '&nbsp;';
-        await new Promise(resolve => setTimeout(resolve, 500)); // half second
+        await memoryScaledWait(500);
     }
     
     for (const elem of document.getElementsByClassName("memory-icon")) {
         elem.classList.add('styled-hover');
     }
     currIndex = 0;
-    isAwaitingInput = true;
+    memoryState = 'INPUT';
 }
 
+async function triggerMemoryReset() {
+    while (memoryState === 'PROCESSING') {
+        await new Promise(resolve => setTimeout(resolve, 100));
+    }
+
+    resetMemoryGame();
+}
 
 function resetMemoryGame() {
     for (const elem of document.getElementsByClassName("memory-icon")) {
@@ -258,9 +264,15 @@ function resetMemoryGame() {
     currIndex = 0;
     score = 0;
     document.getElementById('memory-score').innerHTML = score;
-    isAwaitingInput = false;
     centerGrid.style.opacity = '100%';
     centerGrid.innerHTML = startMemoryButton;
+    memoryState = 'IDLE';
+}
+
+async function memoryScaledWait(duration) {
+    duration -= 25 * score;
+    duration = Math.max(duration, 200);
+    return new Promise(resolve => setTimeout(resolve, duration));
 }
 
 resetMemoryGame();
