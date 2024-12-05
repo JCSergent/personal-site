@@ -142,7 +142,7 @@ let highScore = 0;
 let score = 0;
 let currIndex = 0;
 let sequence = [];
-const startMemoryButton = '<div class="game-actions" id="start-memory"><button tooltip="Start" onclick="playMemoryTurn()">Start</button></div>'
+const startMemoryButton = '<div class="text-center" id="start-memory"><button tooltip="Start" onclick="playMemoryTurn()">Start</button></div>'
 const centerGrid = document.getElementsByClassName("memory-icon").namedItem('11');
 
 async function memoryClick(event) {

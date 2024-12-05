@@ -152,16 +152,23 @@ background-image:
 .game-actions {
   margin: 4px 0;
   text-align: center;
-  button {
-    font-size: 20px;
-    border-radius: 4px;
-    background-color: inherit;
-    display: inline-block;
-  }
+}
 
-  button:hover {
-    cursor: pointer;
-  }
+button {
+  font-size: 20px;
+  border-radius: 4px;
+  background-color: inherit;
+  display: inline-block;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.text-center {
+  text-align: center;
+  text-align: -webkit-center;
 }
 
 .glyph-game {
