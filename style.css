@@ -121,7 +121,7 @@ background-image:
 .landing-title {
   font-size: 24px;
   text-align: center;
-  margin-bottom: 1vh;
+  margin-bottom: 6px;
 }
 
 .landing-footer {
@@ -130,7 +130,19 @@ background-image:
 }
 
 .about-me {
+  margin-top: 1vh;
   font-size: 14px;
+}
+
+.play-game {
+  display: flex;
+  flex-direction: column;
+}
+
+.game {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .game-bio {
@@ -138,12 +150,13 @@ background-image:
 }
 
 .game-actions {
-  margin: 8px 0;
+  margin: 4px 0;
   text-align: center;
   button {
     font-size: 20px;
     border-radius: 4px;
     background-color: inherit;
+    display: inline-block;
   }
 
   button:hover {
@@ -152,6 +165,7 @@ background-image:
 }
 
 .glyph-game {
+  flex: 1 1 auto;
   margin-top: 10vh;
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
@@ -164,6 +178,7 @@ background-image:
 }
 
 .match-game {
+  flex: 1 1 auto;
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   /* gap: 2vh 2vh; */
@@ -184,6 +199,7 @@ background-image:
 }
 
 .memory-game {
+  flex: 1 1 auto;
   margin-top: 2vh;
   display: grid;
   grid-template-columns: auto auto auto;
@@ -195,6 +211,21 @@ background-image:
   text-align: center;
   align-content: center;
   border: black 2px solid;
+}
+
+.falling-game {
+  flex: 1 1 auto;
+  margin-top: 2vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+  border: black 2px solid;
+}
+
+.falling-icon {
+  font-size: 100px;
+  text-align: center;
+  align-content: center;
 }
 
 

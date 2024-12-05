@@ -15,7 +15,7 @@ function changeGame(pos) {
     let name = '';
     for (let i = 0; i < games.length; i++) {
         if (currentGame === i) {
-            games[i].style.display = 'block';
+            games[i].style.display = 'flex';
             name = games[i].id
         } else {
             games[i].style.display = 'none';
