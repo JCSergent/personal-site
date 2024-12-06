@@ -115,7 +115,6 @@ background-image:
   margin: 6vh 2vw 0 2vw;
   display: grid;
   grid-template-columns: 50% 50%;
-  height: 664px;
 }
 
 .landing-title {
@@ -134,15 +133,10 @@ background-image:
   font-size: 14px;
 }
 
-.play-game {
-  display: flex;
-  flex-direction: column;
-}
-
 .game {
-  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+  height: 600px;
 }
 
 .game-bio {
@@ -170,9 +164,20 @@ button:hover {
   text-align: center;
 }
 
+.test-clip {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  -webkit-mask-image: url(./assets/Untitled_Artwork\ \(1\).png);
+  mask-image: url(./assets/Untitled_Artwork\ \(1\).png);
+  mask-repeat: no-repeat;
+}
+
 .glyph-game {
-  flex: 1 1 auto;
-  margin-top: 10vh;
+  /* flex: 1 1 auto; */
+  margin-top: 15vh;
+  /* margin: 40% 0 60% 0; */
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
 }
@@ -222,21 +227,103 @@ button:hover {
   border: black 2px solid;
 }
 
-.falling-game {
+.race-game {
   flex: 1 1 auto;
   margin-top: 2vh;
+  border: black 2px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.race-buttons {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 1rem;
-  border: black 2px solid;
+  border-top: black 2px solid;
 }
 
-.falling-icon {
+.race-icon {
   font-size: 100px;
   text-align: center;
   align-content: center;
 }
 
+.race-contents {
+  flex: 1 1 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.car {
+  position: absolute;
+  font-size: 100px;
+  top: 75%;
+  left: 44%;
+}
+
+.road {
+  opacity: 0%;
+  position: absolute;
+  font-size: 16px;
+}
+
+.left {
+  top: 35%;
+  left: 46%;  
+  transform: rotate(10deg);
+  animation: road-left 2s linear infinite 0s;
+}
+
+@keyframes road-left {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    top: 100%;
+    left: -5%;
+    transform: scale(500%) rotate(10deg);
+  }
+}
+
+.right {
+  opacity: 0%;
+  top: 35%;
+  left: 48%;
+  transform: rotate(100deg);
+  animation: road-right 2s linear infinite 0s;
+}
+
+@keyframes road-right {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    top: 100%;
+    left: 105%;
+    transform: scale(500%) rotate(100deg);
+  }
+}
+
+.straight {
+  opacity: 0%;
+  top: 35%;
+  left: 48%;  
+  animation: road-straight 2s linear infinite 0s;
+}
+
+@keyframes road-straight {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    top: 100%;
+    transform: scale(500%);
+  }
+}
 
 .games {
   margin: 0 10px;

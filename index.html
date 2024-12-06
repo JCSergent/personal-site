@@ -10,6 +10,8 @@
       <div class="landing-page">
         <div class="title">JC Sergent</div>
         <!-- <div class="bio">Game Developer | Programmer</div> -->
+
+        <!-- <img  class="test-clip" src="./assets/Untitled_Artwork (2).png" /> -->
          
         <div class="landing-content">
           <div style="text-align: center;">
@@ -85,21 +87,33 @@
                 <div class="memory-icon styled-hover" id="22">&nbsp;</div>
               </div>
             </div>
-            <div id="Falling" class="game">
+            <div id="Race" class="game">
               <div class="game-actions">
-                <button tooltip="Reset" onclick="triggerMemoryReset()">&olarr;</button>
+                <button tooltip="Reset" onclick="">&olarr;</button>
               </div>
-              <div class="game-bio">REMEMBER THE SEQUENCE. BEAT YOUR SCORE.</div>
-              <div class="falling-game">
-                <div class="falling-icon">&nbsp;</div>
-                <div class="falling-icon">&nbsp;</div>
-                <div class="falling-icon">&nbsp;</div>
-                <div class="falling-icon">&nbsp;</div>
-                <div class="falling-icon">&nbsp;</div>
-                <div class="falling-icon">&nbsp;</div>
-                <div class="falling-icon">&nbsp;</div>
-                <div class="falling-icon">&nbsp;</div>
-                <div class="falling-icon">&nbsp;</div>
+              <div class="game-bio"></div>
+              <div class="race-game">
+                <div class="race-ui">
+                  RACE GAME UI WILL GO UP HERE TO DISPLAY SOME INFO
+                </div>
+                <div class="race-contents">
+                  <div class="car" id="racecar">∞</div>
+                  <div class="road left">/</div>
+                  <div class="road left" style="animation-delay: 0.5s">/</div>
+                  <div class="road left" style="animation-delay: 1s">/</div>
+                  <div class="road left" style="animation-delay: 1.5s">/</div>
+                  <div class="road right">/</div>
+                  <div class="road right" style="animation-delay: 0.5s">/</div>
+                  <div class="road right" style="animation-delay: 1s">/</div>
+                  <div class="road right" style="animation-delay: 1.5s">/</div>
+                  <div class="road straight">|</div>
+                  <div class="road straight" style="animation-delay: 1s">|</div>
+                </div>
+                 <div class="race-buttons">
+                  <div class="race-icon styled-hover" onclick="moveCarLeft()">&#8678;</div>
+                  <div class="race-icon styled-hover">&#8682;</div>
+                  <div class="race-icon styled-hover" onclick="moveCarRight()">&#8680;</div>
+                 </div>
               </div>
             </div>
           </div>

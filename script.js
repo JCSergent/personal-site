@@ -280,3 +280,15 @@ resetMemoryGame();
 for (const elem of document.getElementsByClassName("memory-icon")) {
     elem.addEventListener("click", memoryClick);
 }
+
+// RACE GAME
+
+const car = document.getElementById("racecar");
+car.style.left = '44%';
+
+function moveCarLeft() {
+    car.style.left = (parseInt(car.style.left.trim('%')) - 5).toString() + '%';
+}
+function moveCarRight() {
+    car.style.left = (parseInt(car.style.left.trim('%')) + 5).toString() + '%';
+}
