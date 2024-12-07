@@ -48,6 +48,17 @@ function matchClick(event) {
             }
         }
     }
+
+    let won = true;
+    const oldHtml = event.target.innerHTML;
+    for (const elem of document.getElementsByClassName("match-icon")) {
+        if (elem.innerHTML === oldHtml) {
+            won = false;
+        }
+    }
+    if (won) {
+        console.log('won!')
+    }
 }
 
 function resetMatch() {
